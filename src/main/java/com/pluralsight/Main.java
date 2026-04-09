@@ -1,17 +1,28 @@
 package com.pluralsight;
 
+import java.util.Scanner;
+
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     static void main() {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        IO.println(String.format("Hello and welcome!"));
+//        Prompt the user for the size of the sandwich (1 or 2):
+//        a. 1: Regular: base price $5.45
+//        b. 2: Large: base price $8.95
+//        Prompt the user for their age:
+//        a. Student (17 years old or younger) – receive a 10% discount
+//        b. Seniors (65 years old or older) – receive a 20% discount
+//        Display the cost of the sandwich to the screen
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            IO.println("i = " + i);
-        }
+        //Initialize Scanner
+        Scanner scanner = new Scanner(System.in);
+
+        //Declare and assign variables
+        System.out.println("What size of sandwich would you like? ");
+        int sizeOfSandwich = scanner.nextInt();
+        //code solution
+        //Display the cost of the sandwich
     }
+
+
 }
