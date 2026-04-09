@@ -16,11 +16,24 @@ public class Main {
 
         //Initialize Scanner
         Scanner scanner = new Scanner(System.in);
+        //Create prompts
+        //Declare and assign variables for inputs
+        System.out.println("What size of sandwich would you like? (1 - Regular or 2 - Large) ");
+        int userSizeOfSandwich = scanner.nextInt();
 
-        //Declare and assign variables
-        System.out.println("What size of sandwich would you like? ");
-        int sizeOfSandwich = scanner.nextInt();
+        System.out.println("How old are you? ");
+        int user_age = scanner.nextInt();
         //code solution
+        //if statement to trigger the two sizes of the sandwiches
+        if (userSizeOfSandwich == 1) {
+            System.out.println("Regular sandwich is $5:45");
+        } else if (userSizeOfSandwich == 2) {
+            System.out.println("Large sandwich costs $8.95");
+        } else {
+            System.out.print("Sorry try again.");
+        }
+
+        //another if statement for age and discounts
         //Display the cost of the sandwich
     }
 
