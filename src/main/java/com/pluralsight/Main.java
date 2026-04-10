@@ -32,28 +32,29 @@ public class Main {
         //if statement to trigger the two sizes of the sandwiches
         if (userSizeOfSandwich == 1) {
             userTotal = regularSandwichPrice;
-            System.out.println("Regular sandwich is $" + String.format("%.2f",userTotal));
+//            System.out.println("Regular sandwich is $" + String.format("%.2f",userTotal));
         } else if (userSizeOfSandwich == 2) {
             userTotal = largeSandwichPrice;
-            System.out.println("Large sandwich is $" + String.format("%.2f",userTotal));
-        } else {
-            System.out.print("Sorry try again.");
+//            System.out.println("Large sandwich is $" + String.format("%.2f",userTotal));
         }
-
         //another if statement for age and discounts
         if (userAge <= 17) {
             //print and apply 10% discount on the price
             double kiddieDiscountAmount = userTotal * kiddieDiscount;
-            System.out.printf("You have a %%10 discount! Your total now is: $%.2f", userTotal - kiddieDiscountAmount );
+            userTotal = userTotal - kiddieDiscountAmount;
+            System.out.println("You have a %10 discount!");
         } else if (userAge >= 65) {
             //20% discount
             double oldieDiscountAmount = userTotal * oldieDiscount;
-            System.out.printf("You have a %%20 discount! Your total now is: $%.2f", userTotal - oldieDiscountAmount);
+            userTotal = userTotal - oldieDiscountAmount;
+            System.out.println("You have a %20 discount!");
         } else {
             //no discount
             System.out.printf("You total is: $%.2f", userTotal);
         }
         //Display the cost of the sandwich
+        System.out.printf("Your total now is: $%.2f", userTotal);
+
     }
 
 
