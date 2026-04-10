@@ -17,19 +17,35 @@ public class Main {
         //prompts
         System.out.print("What size of sandwich would you like? (1 - Regular or 2 - Large) ");              //Prompt the user for the size of the sandwich (1 or 2):
         int userSizeOfSandwich = scanner.nextInt();
+        scanner.nextLine();
+        //new prompt: if they would like "loaded" sandwich (y/n)
+        //Regular: $1.00
+        //Large: $1.75
+        System.out.print("Would like your sandwich loaded? (y - yes/n - no) ");
+        String userLoadedSandwich = scanner.nextLine();
         System.out.print("How old are you? ");                                                              //Prompt the user for their age
         int userAge = scanner.nextInt();
 
         //code solution
         //if statement to trigger the two sizes of the sandwiches
+        userLoadedSandwich.toLowerCase();                                                                  //making sure input matches with the argument
         if (userSizeOfSandwich == 1) {
             userTotal = regularSandwichPrice;
+            //if nested statement for loaded sandwich
+            if (userLoadedSandwich.equals("y")) {
+                userTotal = userTotal + 1.00;
+            }
         } else if (userSizeOfSandwich == 2) {
             userTotal = largeSandwichPrice;
+            //if statement for loaded sandwich
+            if (userLoadedSandwich.equals("y")) {
+                userTotal = userTotal + 1.75;
+            }
         } else {
             System.out.print("Invalid sandwich size.");
         }
-        //another if statement for age and discounts
+
+        //if statement for age and discounts
         if (userAge <= 17) {
             double studentDiscountAmount = userTotal * studentDiscount;
             userTotal = userTotal - studentDiscountAmount;
