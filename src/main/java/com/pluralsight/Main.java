@@ -18,22 +18,41 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         //Create prompts
         //Declare and assign variables for inputs
-        System.out.println("What size of sandwich would you like? (1 - Regular or 2 - Large) ");
+        double regularSandwichPrice = 5.45;
+        double largeSandwichPrice = 8.95;
+        double kiddieDiscount = 0.10;
+        double oldieDiscount = 0.20;
+        double userTotal = 0;
+        //prompts
+        System.out.print("What size of sandwich would you like? (1 - Regular or 2 - Large) ");
         int userSizeOfSandwich = scanner.nextInt();
-
-        System.out.println("How old are you? ");
-        int user_age = scanner.nextInt();
+        System.out.print("How old are you? ");
+        int userAge = scanner.nextInt();
         //code solution
         //if statement to trigger the two sizes of the sandwiches
         if (userSizeOfSandwich == 1) {
-            System.out.println("Regular sandwich is $5:45");
+            userTotal = regularSandwichPrice;
+            System.out.println("Regular sandwich is $" + String.format("%.2f",userTotal));
         } else if (userSizeOfSandwich == 2) {
-            System.out.println("Large sandwich costs $8.95");
+            userTotal = largeSandwichPrice;
+            System.out.println("Large sandwich is $" + String.format("%.2f",userTotal));
         } else {
             System.out.print("Sorry try again.");
         }
 
         //another if statement for age and discounts
+        if (userAge <= 17) {
+            //print and apply 10% discount on the price
+            double kiddieDiscountAmount = userTotal * kiddieDiscount;
+            System.out.printf("You have a %%10 discount! Your total now is: $%.2f", userTotal - kiddieDiscountAmount );
+        } else if (userAge >= 65) {
+            //20% discount
+            double oldieDiscountAmount = userTotal * oldieDiscount;
+            System.out.printf("You have a %%20 discount! Your total now is: $%.2f", userTotal - oldieDiscountAmount);
+        } else {
+            //no discount
+            System.out.printf("You total is: $%.2f", userTotal);
+        }
         //Display the cost of the sandwich
     }
 
